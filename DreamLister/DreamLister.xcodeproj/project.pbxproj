@@ -26,6 +26,7 @@
 		F96FDE791EA57C670080A51E /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FDE711EA57C670080A51E /* Item+CoreDataClass.swift */; };
 		F96FDE7A1EA57C670080A51E /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FDE721EA57C670080A51E /* Item+CoreDataProperties.swift */; };
 		F96FDE7D1EA58EF30080A51E /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FDE7C1EA58EF30080A51E /* ItemDetailsVC.swift */; };
+		F9ABED791EA594D90092DEEF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ABED781EA594D90092DEEF /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		F96FDE711EA57C670080A51E /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F96FDE721EA57C670080A51E /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F96FDE7C1EA58EF30080A51E /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		F9ABED781EA594D90092DEEF /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			children = (
 				F96FDE631EA197C00080A51E /* MaterialView.swift */,
 				F96FDE651EA19CEC0080A51E /* ItemCellTableViewCell.swift */,
+				F9ABED781EA594D90092DEEF /* CustomTextField.swift */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				F96FDE771EA57C670080A51E /* Store+CoreDataClass.swift in Sources */,
 				F96FDE081EA142180080A51E /* DreamLister.xcdatamodeld in Sources */,
 				F96FDE741EA57C670080A51E /* Image+CoreDataProperties.swift in Sources */,
+				F9ABED791EA594D90092DEEF /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +590,7 @@
 				F96FDE291EA142180080A51E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F96FDE2A1EA142180080A51E /* Build configuration list for PBXNativeTarget "DreamListerTests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +599,7 @@
 				F96FDE2C1EA142180080A51E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F96FDE2D1EA142180080A51E /* Build configuration list for PBXNativeTarget "DreamListerUITests" */ = {
 			isa = XCConfigurationList;
@@ -602,6 +608,7 @@
 				F96FDE2F1EA142180080A51E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -72,6 +72,9 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context , sectionNameKeyPath: nil, cacheName: nil)
         
+        controller.delegate = self
+        
+        
         self.controller = controller
         do {
             //here are different
