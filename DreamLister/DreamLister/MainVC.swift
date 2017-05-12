@@ -35,7 +35,7 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
     }
-    
+
     func configureCell(cell: ItemCellTableViewCell, indexPath: NSIndexPath){
         
         let item = controller.object(at: indexPath as IndexPath)
@@ -63,12 +63,30 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
         
         return 150
     }
+   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let objs = controller.fetchedObjects, objs.count > 0{
+            let item = objs[indexPath.row]
+            performSegue(withIdentifier: "ItemDetailsVC", sender: item)
+        }
+    }
     
     func attemptFetch (){
         
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor (key: "created", ascending: false)
-        fetchRequest.sortDescriptors = [dateSort]
+        let priceSort = NSSortDescriptor (key: "price", ascending: true)
+        let titleSort = NSSortDescriptor (key: "title", ascending: true)
+        
+        
+        if segment.selectedSegmentIndex == 0 {
+            fetchRequest.sortDescriptors = [dateSort]
+        } else if segment.selectedSegmentIndex == 1 {
+            fetchRequest.sortDescriptors=[priceSort]
+        } else if segment.selectedSegmentIndex == 2 {
+            fetchRequest.sortDescriptors = [titleSort]
+        }
+        
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context , sectionNameKeyPath: nil, cacheName: nil)
         
@@ -86,7 +104,20 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
         }
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ItemDetailsVC" {
+            if let destination = segue.destination as? ItemDetailsVC {
+                if let item = sender as? Item {
+                    destination.itemToEdit = item
+                }
+            }
+        }
+    }
     
+    @IBAction func segmentChanged(_ sender: Any) {
+        attemptFetch()
+        tableView.reloadData()
+    }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
@@ -134,7 +165,7 @@ class MainVC: UIViewController, NSFetchedResultsControllerDelegate, UITableViewD
         }
     }
     
-    
+
     
     func generateTestData() {
         let item = Item(context: context)
